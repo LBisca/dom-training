@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+  <!-- <div id="output">Complete JavaScript Course </div>
+  <script>
+    document.getElementById(output).innerHTML = "Hello <br> World";
+
+  </script> -->
+
+  First <input type="text" id="num1"> Second <input type="text" id="num2">
+  <br>
+  <div id="output"></div>
+  <input type="button" onclick="addBy()" value="Add">
+  <input type="button" onclick="subtractBy()" value="Subtract">
+  <input type="button" onclick="divideBy()" value="Divide">
+  <input type="button" onclick="multiplyBy()" value="Multiply">
+
+  <script>
+
+    var output = document.getElementById("output");
+    var num1 = document.getElementById("num1");
+    var num2 = document.getElementById("num2");
+
+    var a;
+    var b;
+    function addBy(a, b) {
+      a = parseInt(num1.value);
+      b = parseInt(num2.value);
+
+      output.innerHTML = (a + b);
+    }
+    function subtractBy(a, b) {
+      a = parseInt(num1.value);
+      b = parseInt(num2.value);
+      output.innerHTML = (a - b);
+    }
+    function divideBy(a, b) {
+      a = parseInt(num1.value);
+      b = parseInt(num2.value);
+      output.innerHTML = (a / b);
+    }
+    function multiplyBy(a, b) {
+      a = parseInt(num1.value);
+      b = parseInt(num2.value);
+      output.innerHTML = (a * b);
+    }
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

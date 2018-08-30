@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <form name="myForm">
+    <input type="button" onClick="myFun(this)" value="Click 1">
+    <input type="button" onClick="myFun(this)" value="Click 2">
+    <input type="button" onClick="myFun(this)" value="Click 3">
+    <br>
+    <br>
+    <input type="button" onClick="buttonFun(this)" value="Click Me 1">
+    <input type="button" onClick="buttonFun(this)" value="Click Me 2">
+    <input type="button" onClick="buttonFun(this)" value="Click Me 3">
+  </form>
+
+  <script>
+    var output = document.getElementById("wrapper");
+
+    function myFun(t) {
+      console.dir(t);
+      output.innerHTML = t.value;
+    }
+
+    function buttonFun(t) {
+      t.value = "CLICKED"
+    }
+
+  </script>
+
+</body>
+
+</html>
