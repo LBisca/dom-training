@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="wrapper">Register</div>
+  <form action="index2.html" onsubmit="return valForm()">
+
+
+    First: <input type="text" id="firstName"><br> Last: <input type="text" id="lastName"><br> Age: <input type="text" id="age"><br>
+
+    <input type="submit" value="submit">
+  </form>
+
+  <script>
+
+    function valForm() {
+      var p = event.target.children;
+      if (p.firstName.value == "") {
+        message = "Need's a first name"
+        return false;
+      }
+      if (p.lastname.value == "") {
+        message = "Need's a last name"
+        return false
+      }
+
+      if (p.lastname.age == "") {
+        message = "Need's the age"
+        return false
+      }
+
+      document.getElementById("wrapper").innerHTML = message
+
+      return true;
+    }
+
+  </script>
+
+
+
+</body>
+
+</html>

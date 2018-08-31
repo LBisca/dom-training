@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="wrapper">Page 1</div>
+  <a href="index.html">index</a>
+  <a href="index2.html">index2</a>
+  <a href="index3.html">index3</a>
+  <input type="button" onclick="startInt()" value="start">
+  <input type="button" onclick="clearInt()" value="clear">
+  <script>
+
+    var output = document.getElementById("wrapper");
+    window.setTimeout(updatePage, 3000)
+
+    var myTimer;
+    function startInt() {
+      myPopUp();
+      myTimer = window.setTimeout(startInt, 1000);
+    }
+
+    function updatePage() {
+      document.getElementById("wrapper").innerHTML = "Welcome"
+    }
+
+    function clearInt() {
+      window.clearInterval(myTimer);
+    }
+
+    function myPopUp() {
+      alert("hello");
+    }
+
+  </script>
+
+</body>
+
+</html>
