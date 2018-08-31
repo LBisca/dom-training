@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <title>uHUm</title>
+  <style>
+    .box {
+      height: 200px;
+      width: 200px;
+      display: block;
+      border: 1px solid black;
+    }
+
+    #getEle {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+    <div id="getEle" ondragstart="dStart()" draggable="true">Drag Me Please</div>
+  </div>
+  <div class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+  <div class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+  <div class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+
+  <script>
+    var holderItem;
+    function dStart() {
+      holderItem = event.target;
+    }
+
+    function nDrop() {
+      event.preventDefault();
+    }
+
+    function dDrop() {
+      event.preventDefault();
+
+      if (event.target.className == "box") {
+        event.target.appendChild(holderItem)
+      }
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
