@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="output">Page 1</div>
+  <img src="https://via.placeholder.com/350x150/222/fff?text=Image1" id="imageSwap">
+
+  <script>
+    var output = document.getElementById("output");
+    imageSwap = document.getElementById("imageSwap")
+    imageHolder = "https://via.placeholder.com/350x150/222/fff?text=Image1"
+
+    imageSwap.onmouseover = clmg;
+    imageSwap.onmouseout = blmg;
+    imageSwap.onclick = clickmg;
+
+    function clickmg() {
+      output.innerHTML = "CLICKED"
+    }
+
+
+    function clmg() {
+      console.dir(this);
+      this.src = "https://via.placeholder.com/350x150/ff0000/fff?text=Image2"
+      message(this.src);
+    }
+
+    function blmg() {
+
+
+      this.src = imageHolder;
+      message(this.src);
+    }
+
+    function message(m) {
+      document.getElementById("output").innerHTML = m;
+    }
+  </script>
+
+</body>
+
+</html>
