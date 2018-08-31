@@ -1,0 +1,58 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <form>
+    <select onchange="imgU()">
+      <option value="">Select</option>
+      <option value="150x150">Small</option>
+      <option value="350x150">Medium</option>
+      <option value="750x150">Large</option>
+    </select>
+    <br> Add Text: <input type="text" onchange="imgU()">
+    <br> Select Outside Color: <input type="color" onchange="imgU()" id="oCor">
+    <br> Select Inside Color: <input type="color" onchange="imgU()" id="iCor">
+    <br>
+
+    <img src="https://via.placeholder.com/350x150/222/fff?text=Image1" id="myImage">
+  </form>
+
+
+  <script>
+    ibgColor = "222";
+    iColor = "fff";
+    iText = "Image1";
+    iSize = "350x150"
+
+    function imgU() {
+
+      if (event.target.type == 'select-one') {
+        iSize = event.target.value;
+      } else if (event.target.type == 'text') {
+        iText = event.target.value;
+      } else if (event.target.id == 'oCor') {
+        var nColor = event.target.value
+        ibgColor = nColor.replace("#", "")
+      } else if (event.target.id == 'iCor') {
+        var nCor = event.target.value;
+        iCor = nCor.replace("#", "");
+      }
+
+
+
+      var imsrc = `https://via.placeholder.com/${iSize}/${ibgColor}/${iCor}?text=${iText}`
+      event.target.parentElement.myImage.src = imsrc;
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
