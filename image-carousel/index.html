@@ -6,7 +6,7 @@
 
 <body>
   <div id="wrapper">Page 1</div>
-  <input type="button" value="Swap Color" onclick="swapImage()">
+  <!-- <input type="button" value="Swap Color" onclick="swapImage()"> -->
   <br>
   <img id="myImage" src="">
 
@@ -18,6 +18,10 @@
     var imageC = ["222", "111", "FF0000", "00FF00", "0000FF", "000", "388"];
 
     myImage.src = `https://via.placeholder.com/350x150/${imageC[imagePlace]}/fff?text=${images[imagePlace]}`;
+
+    function interval() {
+      setInterval(swapImage, 2000);
+    }
 
     function swapImage() {
       myImage.src = `https://via.placeholder.com/350x150/${imageC[imagePlace]}/fff?text=${images[imagePlace]}`;

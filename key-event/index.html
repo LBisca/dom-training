@@ -1,0 +1,27 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <input type="text" name="myNum" onkeypress="return numCheck()" onpaste="return false">
+
+  <script>
+
+    function numCheck() {
+      message(!isNaN(event.key));
+      return !isNaN(event.key);
+    }
+
+    function message(m) {
+      document.getElementById("wrapper").innerHTML = m;
+    }
+
+  </script>
+
+
+</body>
+
+</html>
