@@ -7,16 +7,25 @@
 <body>
   <div id="output">Page 1</div>
   <form>
-    First Name: <input type="text" name="e1" value="Lucas"><br> Last Name: <input type="text" id="e2" value="Bisca"><br>
+    First Name: <input type="text" name="First Name" id="e1" value="Lucas" onchange="cFun()"><br> Last Name: <input type=""
+      name="Last Name" id="e2" value="Bisca" onchange="cFun()"><br>
     <input type="button" value="Submit" onclick="sendInfo()">
   </form>
 
   <script>
 
+    function cFun() {
+      var target = event.target;
+      message(target.name + " Changed To " + target.value);
+    }
+
     function sendInfo() {
-      var name = event.target.parentElement.e1.value;
+      var value = event.target.parentElement
+      message("Welcome " + value.e1.value + " " + value.e2.value);
+    }
 
-
+    function message(m) {
+      document.getElementById("output").innerHTML = m
     }
 
 
