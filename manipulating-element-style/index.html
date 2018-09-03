@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="message">Message 1</div>
+  <div id="message1">Message 2</div>
+  <br>
+  <div class="output">Test Me 1</div>
+  <div class="output">Test Me 2</div>
+  <div class="output">Test Me 3</div>
+  <div class="output">Test Me 4</div>
+  <div class="output">Test Me 5</div>
+  <div class="output">Test Me 6</div>
+  <div class="output">Test Me 7</div>
+  <div class="output">Test Me 8</div>
+  <div class="output">Test Me 9</div>
+  <div class="output">Test Me 10</div>
+
+  <script>
+    var colors = ["red", "blue", "yellow"]
+    var el = document.querySelectorAll(".output");
+    var count = 0;
+
+
+    setInterval(colorsPhase, 1000)
+
+
+    function colorsPhase() {
+      switch (count) {
+        case 0:
+          colorChange(colors[0]);
+          count++
+          break;
+        case 1:
+          colorChange(colors[1]);
+          count++
+          break;
+        case 2:
+          colorChange(colors[2]);
+          count = 0;
+          break;
+      }
+    }
+
+    function colorChange(color) {
+      for (var x = 0; x < el.length; x++) {
+        el[x].style.backgroundColor = color;
+      }
+    }
+
+  </script>
+
+</body>
+
+
+
+</html>
