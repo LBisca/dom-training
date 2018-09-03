@@ -20,13 +20,20 @@
   <div class="output">Test Me 10</div>
 
   <script>
-    var colors = ["red", "blue", "yellow"]
+    var colors = ["red", "blue", "yellow", "pink", "green", "purple"]
     var el = document.querySelectorAll(".output");
     var count = 0;
 
+    function start() {
+      setInterval(bgSwap, 1000)
+    }
 
-    setInterval(colorsPhase, 1000)
-
+    function bgSwap() {
+      for (var x = 0; x < el.length; x++) {
+        var c = Math.floor(Math.random() * 7);
+        el[x].style.backgroundColor = colors[c]
+      }
+    }
 
     function colorsPhase() {
       switch (count) {
