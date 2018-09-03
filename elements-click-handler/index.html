@@ -6,6 +6,10 @@
     .highlight {
       background-color: yellow;
     }
+
+    input[name="first"] {
+      background-color: red;
+    }
   </style>
 
 </head>
@@ -17,6 +21,8 @@
   <div class="output highlight">Test Me 1</div>
   <div class="output">Test Me 2</div>
   <div class="output">Test Me 3</div>
+  <input type="text" name="first" id="first">
+  <input type="button" value="Submit" onclick="myFun()">
   <div class="output">Test Me 4</div>
   <div class="output highlight">Test Me 5</div>
   <div class="output">Test Me 6</div>
@@ -40,16 +46,22 @@
         if (event.target.classList.length > 1) {
           message1.innerText = "Highlitghted clicked"
         }
-
-
       }
-
-
-
     }
 
+    function myFun() {
+      var a = document.getElementById("first").value;
+      var el = qs(a);
+      var html = "Results<br>"
+      for (var x = 0; x < el.length; x++) {
+        html += `${el[x].innerText}<br>`;
+      }
+      document.getElementById('message').innerHTML = html;
+    }
 
-
+    function qs(el) {
+      return document.querySelectorAll(el)
+    }
   </script>
 
 </body>
