@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="message"></div>
+  <div id="output"></div>
+  <input type="text" value="This is some dummy text" id="myT">
+
+  <script>
+
+    document.getElementById("myT").addEventListener("select", myFun);
+
+
+    function myFun() {
+      var e = event.target
+      var str = e.value;
+      var result = str.substring(e.selectionStart, e.selectionEnd);
+      document.getElementById("output").innerText = result;
+    }
+
+
+  </script>
+
+</body>
+
+</html>

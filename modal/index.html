@@ -1,0 +1,82 @@
+<html>
+
+<head>
+
+  <style>
+    #modal {
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    #modal .shadow {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      box-sizing: border-box;
+    }
+
+    #modal .content {
+      position: relative;
+      max-width: 100%;
+      width: 600px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 32px;
+      padding: 16px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background-color: #eeeeee;
+      z-index: 11;
+    }
+  </style>
+
+</head>
+
+<body>
+  <input type="button" value="Click Me!" onclick="modalFun()">
+
+  <div id="modal">
+    <div id="shadow" class="shadow" onclick="hideModal()"></div>
+    <div class="content">
+      <div class="description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus hendrerit lacus, non semper enim
+          lobortis
+          vitae. Maecenas in sodales urna, ut faucibus risus. Donec semper pulvinar lorem, eget aliquet orci porta
+          eget.
+          liquam ut euismod odio, vulputate placerat mauris. Donec dictum faucibus viverra.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var modal = document.getElementById("modal")
+
+    function modalFun() {
+      modal.style.visibility = "visible";
+      modal.style.opacity = "1";
+    }
+
+    function hideModal() {
+      modal.style.opacity = "0";
+      setTimeout(function () {
+        modal.style.visibility = "hidden";
+      }, 500);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

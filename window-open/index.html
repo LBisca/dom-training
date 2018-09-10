@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <div id="message">String Guess</div>
+  <input type="text" id="stringInput">
+  <input type="text" id="sLength">
+  <input type="button" value="submit" id="submitB">
+
+  <script>
+
+    var a = document.getElementById("submitB").onclick = function () {
+      verifyLength();
+    }
+
+    function verifyLength() {
+      var txt = document.getElementById("stringInput").value;
+      var inputL = parseInt(document.getElementById("sLength").value);
+
+      if (inputL > txt.length) {
+        console.log(`The length is lesser than ${inputL}`);
+      } else if (inputL < txt.length) {
+        console.log(`The length is bigger than ${inputL}`);
+      } else {
+        console.log(`The lenght ${inputL} is correct!`)
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
